@@ -1,0 +1,22 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+    username: msd
+    password: msd121345
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/corptest
+      max-size: 8
+      min-size: 2
+  flyway:
+    migrate-at-start: true
+    baseline-on-migrate: true
+
+  hibernate-orm:
+    log:
+      sql: true
+
+  http:
+    port: 8081
+
+  log:
+    level: INFO
