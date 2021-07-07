@@ -1,4 +1,4 @@
-# ct-corp-test Project
+# Quarkus Project
 
 This project uses Quarkus and PostgreSQL.
 

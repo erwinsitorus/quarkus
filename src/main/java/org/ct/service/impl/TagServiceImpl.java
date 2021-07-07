@@ -1,6 +1,7 @@
 package org.ct.service.impl;
 
 import org.ct.dto.request.RequestTag;
+import org.ct.entity.Post;
 import org.ct.entity.Tag;
 import org.ct.exception.PostTagException;
 import org.ct.repository.TagRepository;
@@ -63,6 +64,11 @@ public class TagServiceImpl implements TagService {
     public void delete(long tagId) {
         Tag tag = findById(tagId);
         tagRepository.delete(tag);
+    }
+
+    @Override
+    public List<Post> findPostByTagLabel(String label) {
+        return findByLabel(label).stream().map(Tag::getPosts).flatMap(List::stream).collect(Collectors.toList());
     }
 
 }

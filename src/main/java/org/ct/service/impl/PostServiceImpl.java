@@ -23,7 +23,6 @@ public class PostServiceImpl implements PostService {
     @Inject
     private TagRepository tagRepository;
 
-
     @Override
     public List<Post> findAll(){
         return postRepository.listAll();

@@ -15,6 +15,6 @@ public class TagRepository implements PanacheRepository<Tag> {
     }
 
     public List<Tag> findByLabel(String label){
-        return find("upper(label)", label.toUpperCase(Locale.ROOT)).list();
+        return list("SELECT t FROM Tag t WHERE upper(t.label) like ?1", label.toUpperCase(Locale.ROOT));
     }
 }

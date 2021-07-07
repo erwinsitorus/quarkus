@@ -1,6 +1,7 @@
 package org.ct.api;
 
 import org.ct.dto.request.RequestTag;
+import org.ct.entity.Post;
 import org.ct.entity.Tag;
 import org.ct.service.TagService;
 
@@ -33,9 +34,15 @@ public class TagResource {
     }
 
     @GET
-    @Path("/search/{label}")
+    @Path("/search-tag/{label}")
     public List<Tag>  search(@PathParam("label") String label) {
         return tagService.findByLabel(label);
+    }
+
+    @GET
+    @Path("/search-post/{label}")
+    public List<Post> searchPost(@PathParam("label") String label) {
+        return tagService.findPostByTagLabel(label);
     }
 
     @POST

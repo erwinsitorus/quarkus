@@ -1,6 +1,7 @@
 package org.ct.service;
 
 import org.ct.dto.request.RequestTag;
+import org.ct.entity.Post;
 import org.ct.entity.Tag;
 import java.util.List;
 
@@ -16,4 +17,6 @@ public interface TagService {
     Tag update(RequestTag request, long tagId);
 
     void delete(long postId);
+
+    List<Post> findPostByTagLabel(String label);
 }
